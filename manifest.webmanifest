@@ -1,0 +1,19 @@
+{
+  "name": "sImage, privacy for your images",
+  "short_name": "sImage",
+  "description": "Remove metadata and hide sensitive visual details without uploading your images.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080906",
+  "theme_color": "#080906",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
