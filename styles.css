@@ -75,6 +75,39 @@ img, canvas { max-width: 100%; }
 .skip-link:focus { transform: translateY(0); }
 .container { width: min(calc(100% - 40px), var(--container)); margin-inline: auto; }
 
+/* Donation banner */
+.donation-banner {
+  position: relative;
+  z-index: 110;
+  color: #071006;
+  background: var(--green);
+}
+.donation-banner a {
+  display: flex;
+  width: min(calc(100% - 40px), var(--container));
+  min-height: 46px;
+  margin-inline: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  font-size: 13px;
+  font-weight: 650;
+  text-align: center;
+}
+.donation-banner strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+}
+.donation-banner svg { width: 17px; height: 17px; transition: transform 160ms ease; }
+.donation-banner a:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+.donation-banner a:hover svg { transform: translateX(3px); }
+.donation-banner a:focus-visible { outline-color: #071006; outline-offset: -4px; }
+
 /* Navigation */
 .site-header {
   position: sticky;
@@ -516,6 +549,8 @@ img, canvas { max-width: 100%; }
 @media (max-width: 660px) {
   html { scroll-padding-top: 68px; }
   .container { width: min(calc(100% - 22px), var(--container)); }
+  .donation-banner a { width: min(calc(100% - 22px), var(--container)); min-height: 58px; gap: 5px; flex-direction: column; padding-block: 9px; font-size: 11px; }
+  .donation-banner strong { font-size: 9px; }
   .nav-wrap { min-height: 63px; }
   .menu-toggle { display: block; cursor: pointer; }
   .menu-toggle[aria-expanded="true"] > span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
