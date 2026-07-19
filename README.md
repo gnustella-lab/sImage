@@ -70,4 +70,4 @@ favicon.svg                vector icon
 
 ## License
 
-Free for personal and commercial use. Add an explicit license before accepting external contributions.
+Licensed under the MIT License. See [LICENSE](LICENSE).
