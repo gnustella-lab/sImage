@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080906">
+  <meta name="theme-color" content="#0d0c0a">
   <meta name="description" content="sImage is a private image studio for removing metadata, hiding sensitive details, resizing, compressing, and converting images without uploads.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' blob: data:; script-src 'self'; style-src 'self'; connect-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'; worker-src 'self'">
   <title>sImage, privacy for your images</title>
@@ -16,9 +16,8 @@
 
   <aside class="donation-banner" aria-label="Support sImage">
     <a href="https://donate.stripe.com/4gMaEW46oaQm8DU3XU97G06">
-      <span>Help keep sImage free, private, and ad-free.</span>
-      <strong>
-        Make a donation
+      <span>sImage is free, private, and ad-free.</span>
+      <strong>Support the project
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </strong>
     </a>
@@ -27,11 +26,12 @@
   <header class="site-header" id="home">
     <div class="container nav-wrap">
       <a class="brand" href="#home" aria-label="sImage, home page">
-        <span class="brand-mark" aria-hidden="true">S</span><span>Image</span>
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">sImage</span>
       </a>
 
       <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav">
-        <span></span><span></span><span></span>
+        <span></span><span></span>
         <span class="sr-only">Open menu</span>
       </button>
 
@@ -39,64 +39,52 @@
         <a href="#features">Features</a>
         <a href="#privacy">Privacy</a>
         <a href="#how-it-works">How it works</a>
-        <a class="nav-cta" href="#studio">Open studio</a>
+        <a class="nav-cta" href="#studio">Open the studio</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-grid container">
+      <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow"><span class="pulse-dot"></span> 100% local in your browser</div>
-          <h1>Edit what people see.<br><span>Erase what gives you away.</span></h1>
-          <p class="hero-lead">Protect images before sharing. Remove metadata, hide sensitive details, and optimize files without sending anything to a server.</p>
+          <p class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span>100% local &mdash; nothing ever leaves your device</p>
+          <h1>Share the picture.<br><em>Not the paper trail.</em></h1>
+          <p class="hero-lead">Every photo carries hidden metadata: where you were, when, and what device you used. sImage strips it all inside your browser &mdash; no uploads, no account, no cloud.</p>
           <div class="hero-actions">
             <button class="button button-primary" type="button" data-open-file>
               Protect an image
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
             </button>
-            <a class="button button-ghost" href="#features">Explore features</a>
+            <a class="button button-ghost" href="#privacy">How it stays private</a>
           </div>
-          <div class="trust-row" aria-label="Privacy commitments">
-            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> No uploads</span>
-            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> No account</span>
-            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Static code</span>
-          </div>
+          <ul class="trust-row" aria-label="Privacy commitments">
+            <li>No uploads</li>
+            <li>No account</li>
+            <li>Open source</li>
+          </ul>
         </div>
 
-        <div class="hero-visual reveal" aria-label="Privacy report preview">
-          <div class="visual-glow"></div>
-          <div class="privacy-card">
-            <div class="card-window-bar">
-              <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
-              <span>privacy_report.img</span>
-              <span class="local-chip">LOCAL</span>
+        <div class="hero-visual reveal" aria-label="Metadata purge preview">
+          <div class="purge-card">
+            <div class="purge-head">
+              <span class="purge-file">IMG_4021.jpg</span>
+              <span class="purge-chip">SCANNED LOCALLY</span>
             </div>
-            <div class="mock-image" aria-hidden="true">
-              <div class="mock-sun"></div>
-              <div class="mock-mountain back"></div>
-              <div class="mock-mountain front"></div>
-              <div class="scan-line"></div>
-              <div class="focus-box"><span></span><span></span><span></span><span></span></div>
-            </div>
-            <div class="privacy-score-row">
-              <div class="score-ring"><strong>100</strong><small>safe</small></div>
-              <div class="score-copy">
-                <span class="mini-label">READY TO SHARE</span>
-                <h2>Traces removed.</h2>
-                <p>The pixels stay. Location, camera details, and timestamps do not.</p>
-              </div>
-            </div>
-            <div class="receipt-list">
-              <div><span><i class="status-icon">✓</i> Location data</span><strong>REMOVED</strong></div>
-              <div><span><i class="status-icon">✓</i> Camera model</span><strong>REMOVED</strong></div>
-              <div><span><i class="status-icon">✓</i> Date and time</span><strong>REMOVED</strong></div>
+            <ul class="purge-list">
+              <li><span class="purge-key">GPS position</span><s>41.9028&deg; N, 12.4964&deg; E</s><span class="purge-status">PURGED</span></li>
+              <li><span class="purge-key">Captured</span><s>2026-07-12 14:03:57</s><span class="purge-status">PURGED</span></li>
+              <li><span class="purge-key">Device</span><s>Camera Pro Max</s><span class="purge-status">PURGED</span></li>
+              <li><span class="purge-key">Serial number</span><s>SN-88C1-0042</s><span class="purge-status">PURGED</span></li>
+              <li><span class="purge-key">Owner profile</span><s>ICC / XMP blocks</s><span class="purge-status">PURGED</span></li>
+            </ul>
+            <div class="purge-foot">
+              <span class="stamp" aria-hidden="true">CLEAN</span>
+              <p>Pixels preserved. History erased.<br><small>Verified on this device &mdash; 0 bytes sent.</small></p>
             </div>
           </div>
-          <div class="floating-badge badge-lock">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-            Your files never leave this device
+          <div class="hero-caption" aria-hidden="true">
+            <span></span>fig. 01 &mdash; what your photos say about you
           </div>
         </div>
       </div>
@@ -105,24 +93,26 @@
     <section class="studio-section" id="studio">
       <div class="container">
         <div class="section-heading reveal">
-          <span class="section-index">01 / STUDIO</span>
-          <h2>A private workspace for every image.</h2>
-          <p>Choose a file to open the editor. Everything stays in your device memory.</p>
+          <span class="section-index">01 &mdash; The studio</span>
+          <h2>A darkroom for your metadata.</h2>
+          <p>Open a file to start. Everything happens in your device&apos;s memory.</p>
         </div>
 
         <div class="studio reveal" id="studioEditor">
           <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp,image/gif,image/bmp" hidden>
 
           <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-label="Choose or drop an image">
-            <div class="drop-grid" aria-hidden="true"></div>
-            <div class="drop-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L7 9m5-5 5 5"/><path d="M5 15v4h14v-4"/></svg>
+            <div class="drop-frame" aria-hidden="true">
+              <i></i><i></i><i></i><i></i>
             </div>
-            <span class="drop-kicker">PRIVATE AREA</span>
-            <h3>Drop your image here</h3>
-            <p>or choose a JPEG, PNG, WebP, GIF, or BMP file</p>
-            <button class="button button-primary" type="button" data-open-file>Choose image</button>
-            <small>Your file is never uploaded. Recommended limit: 40 MB.</small>
+            <div class="drop-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9" r="1.5"/><path d="m4 17 5-5 4 4 2-2 5 4"/></svg>
+            </div>
+            <span class="drop-kicker">Private area</span>
+            <h3>Drop an image here</h3>
+            <p>JPEG, PNG, WebP, GIF, or BMP &mdash; up to 40 MB recommended</p>
+            <button class="button button-primary" type="button" data-open-file>Choose an image</button>
+            <small>Your file is read locally. It is never uploaded.</small>
           </div>
 
           <div class="editor" id="editor" hidden>
@@ -131,9 +121,9 @@
                 <span class="file-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9" r="1.5"/><path d="m4 17 5-5 4 4 2-2 5 4"/></svg>
                 </span>
-                <span><strong id="fileName">image.jpg</strong><small id="fileDetails">0 × 0 • 0 KB</small></span>
+                <span class="file-meta"><strong id="fileName">image.jpg</strong><small id="fileDetails">0 &times; 0 &bull; 0 KB</small></span>
               </div>
-              <div class="file-status"><span></span> Processing locally</div>
+              <div class="file-status"><span aria-hidden="true"></span>Processing locally</div>
               <button class="icon-button" id="closeImage" type="button" aria-label="Close image">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
               </button>
@@ -142,17 +132,14 @@
             <nav class="workflow-bar" data-step="1" aria-label="Editing workflow">
               <button class="tool-tab active" type="button" data-panel="privacy" aria-pressed="true" aria-current="step">
                 <span class="step-number">01</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 2.9 8.7 7 10 4.1-1.3 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
                 <span class="tool-tab-copy"><strong>Clean metadata</strong><small>Automatic privacy scan</small></span>
               </button>
               <button class="tool-tab" type="button" data-panel="redact" aria-pressed="false">
                 <span class="step-number">02</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/><path d="M7 3v18M17 3v18"/></svg>
                 <span class="tool-tab-copy"><strong>Hide sensitive areas</strong><small>Pixelate, blur, or cover</small></span>
               </button>
               <button class="tool-tab" type="button" data-panel="adjust" aria-pressed="false">
                 <span class="step-number">03</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>
                 <span class="tool-tab-copy"><strong>Resize and export</strong><small>Format, size, and quality</small></span>
               </button>
             </nav>
@@ -160,7 +147,7 @@
             <div class="editor-grid">
               <div class="canvas-panel">
                 <div class="canvas-toolbar">
-                  <span id="canvasLabel">PROTECTED PREVIEW</span>
+                  <span class="canvas-label" id="canvasLabel">PROTECTED PREVIEW</span>
                   <div class="zoom-controls">
                     <button class="zoom-btn" id="zoomOut" type="button" aria-label="Zoom out">
                       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
@@ -172,41 +159,43 @@
                   </div>
                   <button class="compare-button" id="compareButton" type="button">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5c-5 0-9 7-9 7s4 7 9 7 9-7 9-7-4-7-9-7Z"/><circle cx="12" cy="12" r="2.5"/></svg>
-                    Hold to view original
+                    Hold to compare
                   </button>
                 </div>
                 <div class="canvas-stage" id="canvasStage">
                   <div class="canvas-redact-toolbar" id="canvasRedactToolbar" hidden>
                     <button class="canvas-tool-btn active" type="button" data-canvas-redaction="pixelate" aria-label="Pixelate">
-                      <i class="pixel-icon"></i>
+                      <i class="pixel-icon" aria-hidden="true"></i>
                     </button>
                     <button class="canvas-tool-btn" type="button" data-canvas-redaction="blur" aria-label="Blur">
-                      <i class="blur-icon"></i>
+                      <i class="blur-icon" aria-hidden="true"></i>
                     </button>
                     <button class="canvas-tool-btn" type="button" data-canvas-redaction="bar" aria-label="Solid cover">
-                      <i class="bar-icon"></i>
+                      <i class="bar-icon" aria-hidden="true"></i>
                     </button>
-                    <span class="canvas-tool-divider"></span>
+                    <span class="canvas-tool-divider" aria-hidden="true"></span>
                     <button class="canvas-tool-btn" id="canvasUndoBtn" type="button" aria-label="Undo" disabled>
                       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 7-5 5 5 5"/><path d="M20 18a7 7 0 0 0-7-7H4"/></svg>
                     </button>
                   </div>
                   <canvas id="previewCanvas" aria-label="Edited image preview"></canvas>
-                  <div class="canvas-local-badge"><span></span> LOCAL MEMORY</div>
+                  <div class="canvas-local-badge"><span aria-hidden="true"></span>LOCAL MEMORY</div>
                 </div>
-                <p class="canvas-help" id="canvasHelp">This preview already represents the metadata-free copy.</p>
+                <p class="canvas-help" id="canvasHelp">The preview represents the new copy with metadata removed.</p>
               </div>
 
               <div class="control-panel">
                 <section class="tool-panel active" id="panel-privacy" data-tool-panel="privacy">
-                  <div class="panel-heading-row"><span class="panel-overline">DIGITAL HYGIENE</span><span class="panel-step">STEP 1 OF 3</span></div>
+                  <div class="panel-heading-row"><span class="panel-overline">Digital hygiene</span><span class="panel-step">Step 1 / 3</span></div>
                   <h3>Clean metadata</h3>
-                  <p>sImage re-encodes the pixels and discards known EXIF, XMP, IPTC, and location data blocks.</p>
+                  <p>sImage re-encodes the pixels and discards known EXIF, XMP, IPTC, and location blocks.</p>
 
                   <div class="metadata-card">
                     <div class="metadata-top">
-                      <span class="metadata-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 2.9 8.7 7 10 4.1-1.3 7-5.4 7-10V6l-7-3Z"/></svg></span>
-                      <span><small>FILE SCAN</small><strong id="metadataSummary">Waiting for scan</strong></span>
+                      <span class="metadata-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 2.9 8.7 7 10 4.1-1.3 7-5.4 7-10V6l-7-3Z"/></svg>
+                      </span>
+                      <span class="metadata-copy"><small>FILE SCAN</small><strong id="metadataSummary">Waiting for scan</strong></span>
                     </div>
                     <div class="metadata-meter"><i id="metadataMeter"></i></div>
                     <div class="metadata-foot"><span id="metadataBlocks">0 known blocks</span><span id="metadataSize">0 B</span></div>
@@ -225,7 +214,7 @@
 
                   <div class="privacy-note">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
-                    <p>The scanner lists known blocks. Export still cleans the file when no block is detected.</p>
+                    <p>The scanner lists known blocks. Export still cleans the file even when no block is detected.</p>
                   </div>
 
                   <div class="panel-actions">
@@ -235,18 +224,18 @@
                 </section>
 
                 <section class="tool-panel" id="panel-redact" data-tool-panel="redact" hidden>
-                  <div class="panel-heading-row"><span class="panel-overline">VISUAL REDACTION</span><span class="panel-step">STEP 2 OF 3</span></div>
+                  <div class="panel-heading-row"><span class="panel-overline">Visual redaction</span><span class="panel-step">Step 2 / 3</span></div>
                   <h3>Hide sensitive areas</h3>
-                  <p>Choose a protection style, then drag directly over faces, plates, documents, or private details in the preview.</p>
+                  <p>Pick a protection style, then drag directly over faces, plates, documents, or private details in the preview.</p>
 
-                  <div class="instruction-card"><span>1</span><strong>Choose an effect</strong><i></i><span>2</span><strong>Drag on the image</strong></div>
+                  <div class="instruction-card"><span>1</span><strong>Choose an effect</strong><i aria-hidden="true"></i><span>2</span><strong>Drag on the image</strong></div>
 
                   <fieldset class="choice-fieldset">
                     <legend>Protection style</legend>
                     <div class="redaction-choices">
-                      <button class="redaction-choice active" type="button" data-redaction="pixelate" aria-pressed="true"><i class="pixel-icon"></i>Pixelate</button>
-                      <button class="redaction-choice" type="button" data-redaction="blur" aria-pressed="false"><i class="blur-icon"></i>Blur</button>
-                      <button class="redaction-choice" type="button" data-redaction="bar" aria-pressed="false"><i class="bar-icon"></i>Solid cover</button>
+                      <button class="redaction-choice active" type="button" data-redaction="pixelate" aria-pressed="true"><i class="pixel-icon" aria-hidden="true"></i>Pixelate</button>
+                      <button class="redaction-choice" type="button" data-redaction="blur" aria-pressed="false"><i class="blur-icon" aria-hidden="true"></i>Blur</button>
+                      <button class="redaction-choice" type="button" data-redaction="bar" aria-pressed="false"><i class="bar-icon" aria-hidden="true"></i>Solid cover</button>
                     </div>
                   </fieldset>
 
@@ -269,9 +258,9 @@
                 </section>
 
                 <section class="tool-panel" id="panel-adjust" data-tool-panel="adjust" hidden>
-                  <div class="panel-heading-row"><span class="panel-overline">OUTPUT</span><span class="panel-step">STEP 3 OF 3</span></div>
+                  <div class="panel-heading-row"><span class="panel-overline">Output</span><span class="panel-step">Step 3 / 3</span></div>
                   <h3>Resize and export</h3>
-                  <p>Set the dimensions, format, and quality for your protected copy.</p>
+                  <p>Set the dimensions, format, and quality of your protected copy.</p>
 
                   <fieldset class="preset-fieldset">
                     <legend>Quick size</legend>
@@ -286,13 +275,13 @@
                     <label>Width <span><input id="outputWidth" type="number" min="1" max="16384" inputmode="numeric"><small>px</small></span></label>
                     <label>Height <span><input id="outputHeight" type="number" min="1" max="16384" inputmode="numeric"><small>px</small></span></label>
                   </div>
-                  <label class="check-row"><input id="lockRatio" type="checkbox" checked><span><i></i> Keep original aspect ratio</span></label>
+                  <label class="check-row"><input id="lockRatio" type="checkbox" checked><span><i aria-hidden="true"></i> Keep original aspect ratio</span></label>
 
                   <label class="select-control">Output format
                     <span><select id="outputFormat">
-                      <option value="image/jpeg">JPEG, lightweight and universal</option>
-                      <option value="image/png">PNG, transparency and sharpness</option>
-                      <option value="image/webp">WebP, best compression</option>
+                      <option value="image/jpeg">JPEG &mdash; lightweight and universal</option>
+                      <option value="image/png">PNG &mdash; transparency and sharpness</option>
+                      <option value="image/webp">WebP &mdash; best compression</option>
                     </select><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></span>
                   </label>
 
@@ -314,8 +303,8 @@
 
             <div class="export-bar">
               <div class="export-summary">
-                <span class="export-ready"><i>✓</i></span>
-                <span><strong id="exportStatus">Ready to protect</strong><small id="outputEstimate">File size will appear after export</small></span>
+                <span class="export-ready" aria-hidden="true">&check;</span>
+                <span class="export-copy"><strong id="exportStatus">Ready to protect</strong><small id="outputEstimate">File size will appear after export</small></span>
               </div>
               <div class="export-actions">
                 <button class="button button-ghost compact" id="changeImage" type="button">Change image</button>
@@ -327,8 +316,9 @@
             </div>
           </div>
         </div>
+
         <div class="format-strip" aria-label="Supported formats">
-          <span>INPUT</span><strong>JPG</strong><strong>PNG</strong><strong>WEBP</strong><strong>GIF*</strong><strong>BMP</strong><i></i><small>*Animated GIFs are exported as a static image.</small>
+          <span>Input</span><strong>JPG</strong><strong>PNG</strong><strong>WEBP</strong><strong>GIF*</strong><strong>BMP</strong><i aria-hidden="true"></i><small>*Animated GIFs are exported as a static image.</small>
         </div>
       </div>
     </section>
@@ -336,45 +326,42 @@
     <section class="features-section" id="features">
       <div class="container">
         <div class="section-heading split reveal">
-          <div><span class="section-index">02 / FEATURES</span><h2>Fewer traces.<br>More control.</h2></div>
-          <p>Every tool reduces data exposure without complicating your workflow. No account, cloud, or processing queue.</p>
+          <div>
+            <span class="section-index">02 &mdash; Features</span>
+            <h2>Fewer traces.<br>More control.</h2>
+          </div>
+          <p>Every tool reduces data exposure without complicating your workflow. No account, no cloud, no processing queue.</p>
         </div>
 
         <div class="feature-grid">
           <article class="feature-card featured reveal">
-            <div class="feature-number">01</div>
-            <div class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 2.9 8.7 7 10 4.1-1.3 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <span class="feature-number">01</span>
             <h3>Metadata cleaning</h3>
-            <p>Re-encodes the image to remove EXIF, GPS, XMP, IPTC, comments, and other attached data blocks.</p>
-            <span class="feature-tag">ALWAYS ON</span>
+            <p>Re-encodes the image to remove EXIF, GPS, XMP, IPTC, comments, and other attached data blocks. Then verifies the result.</p>
+            <span class="feature-tag">Always on</span>
           </article>
           <article class="feature-card reveal">
-            <div class="feature-number">02</div>
-            <div class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg></div>
+            <span class="feature-number">02</span>
             <h3>Selective pixelation</h3>
             <p>Mark only sensitive areas such as faces, license plates, addresses, or document numbers.</p>
           </article>
           <article class="feature-card reveal">
-            <div class="feature-number">03</div>
-            <div class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8V5h3M16 5h3v3M19 16v3h-3M8 19H5v-3"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <span class="feature-number">03</span>
             <h3>Blur and solid cover</h3>
             <p>Choose adjustable blur or a solid cover for information that must stay hidden.</p>
           </article>
           <article class="feature-card reveal">
-            <div class="feature-number">04</div>
-            <div class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/><path d="M8 8h8v8H8z"/></svg></div>
+            <span class="feature-number">04</span>
             <h3>Resize</h3>
             <p>Reduce dimensions while preserving aspect ratio, or create a custom output for its destination.</p>
           </article>
           <article class="feature-card reveal">
-            <div class="feature-number">05</div>
-            <div class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6z"/><path d="m9 8 3 3 3-3M9 16h6"/></svg></div>
+            <span class="feature-number">05</span>
             <h3>Smart compression</h3>
             <p>Adjust JPEG and WebP quality to share smaller files without losing what matters.</p>
           </article>
           <article class="feature-card reveal">
-            <div class="feature-number">06</div>
-            <div class="feature-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7v10H7"/><path d="M5 4h14v16H5z"/></svg></div>
+            <span class="feature-number">06</span>
             <h3>Private conversion</h3>
             <p>Convert between JPEG, PNG, and WebP in your browser without relying on third-party websites.</p>
           </article>
@@ -385,24 +372,33 @@
     <section class="privacy-section" id="privacy">
       <div class="container privacy-layout">
         <div class="privacy-copy reveal">
-          <span class="section-index">03 / PRIVATE ARCHITECTURE</span>
-          <h2>Your browser is the server.</h2>
-          <p>sImage runs as a static page. Once loaded, every operation happens inside your browser. The image never travels over the internet.</p>
-          <ul class="privacy-list">
+          <span class="section-index">03 &mdash; Architecture</span>
+          <h2>Your browser <em>is</em> the server.</h2>
+          <p>sImage is a static page. Once loaded, every operation happens inside your browser &mdash; the image never travels over the internet.</p>
+          <ol class="privacy-list">
             <li><span>01</span><div><strong>The file enters local memory</strong><p>Your browser reads the image without uploading it.</p></div></li>
             <li><span>02</span><div><strong>Pixels are processed on your device</strong><p>Edits use native Canvas APIs.</p></div></li>
-            <li><span>03</span><div><strong>A new clean copy is created</strong><p>You download the result directly to your device.</p></div></li>
-          </ul>
+            <li><span>03</span><div><strong>A clean copy is created</strong><p>You download the result directly to your device.</p></div></li>
+          </ol>
         </div>
 
         <div class="privacy-diagram reveal" aria-label="Local processing diagram">
-          <div class="diagram-top"><span>FILE FLOW</span><i>EXTERNAL CONNECTIONS: 0</i></div>
+          <div class="diagram-top"><span>File flow</span><i>External connections: 0</i></div>
           <div class="diagram-flow">
-            <div class="diagram-node"><span class="node-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h10l4 4v14H5z"/><path d="M15 3v5h5"/></svg></span><strong>Your image</strong><small>original file</small></div>
-            <div class="flow-line"><i></i><span>LOCAL</span></div>
-            <div class="diagram-node browser-node"><span class="node-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><strong>Your browser</strong><small>processing</small><div class="orbit"></div></div>
-            <div class="flow-line"><i></i><span>LOCAL</span></div>
-            <div class="diagram-node safe-node"><span class="node-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 2.9 8.7 7 10 4.1-1.3 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><strong>Clean copy</strong><small>ready to download</small></div>
+            <div class="diagram-node">
+              <span class="node-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5z"/><path d="M15 3v5h5"/></svg></span>
+              <strong>Your image</strong><small>original file</small>
+            </div>
+            <div class="flow-line"><i aria-hidden="true"></i><span>LOCAL</span></div>
+            <div class="diagram-node browser-node">
+              <span class="node-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span>
+              <strong>Your browser</strong><small>processing</small>
+            </div>
+            <div class="flow-line"><i aria-hidden="true"></i><span>LOCAL</span></div>
+            <div class="diagram-node safe-node">
+              <span class="node-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 2.9 8.7 7 10 4.1-1.3 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <strong>Clean copy</strong><small>ready to download</small>
+            </div>
           </div>
           <div class="blocked-cloud">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18h11a4 4 0 0 0 .7-7.9A6 6 0 0 0 6.4 8.4 4.8 4.8 0 0 0 6 18Z"/><path d="m4 4 16 16"/></svg>
@@ -415,17 +411,20 @@
     <section class="steps-section" id="how-it-works">
       <div class="container">
         <div class="section-heading centered reveal">
-          <span class="section-index">04 / HOW IT WORKS</span>
+          <span class="section-index">04 &mdash; How it works</span>
           <h2>Protection in three steps.</h2>
-          <p>No complicated setup and no waiting for uploads.</p>
+          <p>No complicated setup, and no waiting for uploads.</p>
         </div>
         <div class="steps-grid">
-          <article class="step reveal"><span>1</span><div class="step-line"></div><h3>Select</h3><p>Open an image from your device.</p></article>
-          <article class="step reveal"><span>2</span><div class="step-line"></div><h3>Protect</h3><p>Hide sensitive areas and adjust the output.</p></article>
-          <article class="step reveal"><span>3</span><div class="step-line"></div><h3>Download</h3><p>Save a new copy without metadata.</p></article>
+          <article class="step reveal"><span>1</span><h3>Select</h3><p>Open an image from your device.</p></article>
+          <article class="step reveal"><span>2</span><h3>Protect</h3><p>Hide sensitive areas and adjust the output.</p></article>
+          <article class="step reveal"><span>3</span><h3>Download</h3><p>Save a new copy without metadata.</p></article>
         </div>
         <div class="final-cta reveal">
-          <div><span class="section-index">PRIVACY SHOULDN'T BE COMPLICATED</span><h2>Ready to share<br>without oversharing?</h2></div>
+          <div>
+            <span class="section-index">Privacy shouldn&apos;t be complicated</span>
+            <h2>Ready to share<br>without oversharing?</h2>
+          </div>
           <button class="button button-primary large" type="button" data-open-file>Protect my image <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
         </div>
       </div>
@@ -434,11 +433,22 @@
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div><a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">S</span><span>Image</span></a><p>Practical privacy for images.</p></div>
-      <div class="footer-links"><a href="#studio">Studio</a><a href="#features">Features</a><a href="#privacy">Privacy</a><a href="https://github.com/gnustella-lab/sImage" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+      <div class="footer-brand">
+        <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">sImage</span></a>
+        <p>Practical privacy for images.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#studio">Studio</a>
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="https://github.com/gnustella-lab/sImage" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
       <p class="footer-note">Built for GitHub Pages.<br>No analytics, cookies, or uploads.</p>
     </div>
-    <div class="container footer-bottom"><span>© <span id="currentYear"></span> sImage</span><span><i></i> LOCAL PROCESSING ACTIVE</span></div>
+    <div class="container footer-bottom">
+      <span>&copy; <span id="currentYear"></span> sImage</span>
+      <span class="footer-live"><i aria-hidden="true"></i>Local processing active</span>
+    </div>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
